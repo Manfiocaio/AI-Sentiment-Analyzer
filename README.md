@@ -1,71 +1,191 @@
-# AI Sentiment Analyzer
+# 🤖 AI Sentiment Analyzer
 
-## Project Overview
-The AI Sentiment Analyzer is an innovative tool designed to analyze sentiment from various text sources using advanced machine learning algorithms. This project aims to empower businesses and individuals by providing insights into public opinion, customer feedback, and social media interactions.
+Aplicação web de Inteligência Artificial que analisa o sentimento de frases em tempo real, utilizando Machine Learning com Python e Flask.
 
-## Tech Stack
-- **Frontend:** React.js
-- **Backend:** Node.js, Express
-- **Database:** MongoDB
-- **Machine Learning:** TensorFlow, Scikit-learn
-- **Deployment:** Docker, AWS
+O sistema classifica textos como **Positivo** ou **Negativo**, exibindo também a confiança da IA e um histórico de análises, com interface moderna, responsiva e focada em UX profissional.
 
-## Features
-- **Real-time Sentiment Analysis:** Analyze text input instantly.
-- **Multi-language Support:** Analyze sentiment in multiple languages.
-- **User-Friendly Interface:** Intuitive UI for easy interaction.
-- **API Access:** Enable third-party integrations.
-- **Data Visualization:** Track sentiment trends over time.
+---
 
-## Installation
-To get started with the AI Sentiment Analyzer, follow these steps:
-1. Clone the repository:
-   ```
-   git clone https://github.com/Manfiocaio/ai-sentiment-analyzer.git
-   ```
-2. Navigate to the project folder:
-   ```
-   cd ai-sentiment-analyzer
-   ```
-3. Install the required dependencies:
-   ```
-   npm install
-   ```
-4. Run the application:
-   ```
-   npm start
-   ```
+## 🚀 Demonstração do Projeto
 
-## Architecture
-The architecture of the AI Sentiment Analyzer follows a microservices approach to ensure scalability and maintainability. Each component of the application (frontend, backend, and database) operates independently while communicating through RESTful APIs.
+Digite uma frase como:
 
-## Testing
-We use Jest and Mocha for testing our application. To run the tests, execute:
-```bash
-npm test
+* "Hoje foi um dia incrível"
+* "Estou muito cansado"
+* "Isso foi horrível"
+
+E a IA irá:
+
+* Classificar o sentimento
+* Mostrar a confiança (%)
+* Salvar no histórico (estilo chat)
+
+---
+
+## 🧠 Funcionalidades de IA
+
+* Classificação de sentimentos com Machine Learning
+* Modelo Naive Bayes treinado com dados personalizados
+* Vetorização de texto com NLP (CountVectorizer)
+* Exibição da confiança do modelo em tempo real
+* Processamento de linguagem natural (NLP básico)
+
+---
+
+## 🎨 Funcionalidades de Interface (UX/UI)
+
+* Interface moderna e responsiva
+* Feedback visual por cor:
+
+  * 🟢 Verde → Positivo
+  * 🔴 Vermelho → Negativo
+* Loading de análise da IA
+* Histórico das análises (estilo ChatGPT)
+* Botão para limpar histórico
+* Estado inicial inteligente ("Teste Agora!")
+* Design com foco em experiência do usuário
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Backend
+
+* Python 3
+* Flask
+* Scikit-learn (Machine Learning)
+
+### Frontend
+
+* HTML5
+* CSS3 (UI Responsiva)
+* JavaScript
+* Lucide Icons (ícones modernos)
+
+### Inteligência Artificial
+
+* Naive Bayes (MultinomialNB)
+* NLP com CountVectorizer
+* Análise de sentimento baseada em texto
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+ai-sentiment-analyzer/
+│
+├── app.py
+├── README.md
+├── requirements.txt
+└── templates/
+    └── index.html
 ```
 
-## Deployment
-The application can be deployed using Docker. To build and run the Docker container, use:
+---
+
+## ⚙️ Como Rodar o Projeto Localmente
+
+### 1️⃣ Clonar o repositório
+
 ```bash
-docker-compose up --build
+git clone https://github.com/SEU-USUARIO/ai-sentiment-analyzer.git
 ```
 
-## Contribution Guidelines
-We welcome contributions! Please follow these steps to contribute:
-1. Fork the repository.
-2. Create a new branch for your feature:
-   ```
-   git checkout -b your-feature-branch
-   ```
-3. Make your changes and commit them:
-   ```
-   git commit -m 'Add some feature'
-   ```
-4. Push to the branch:
-   ```
-   git push origin your-feature-branch
-   ```
-5. Open a pull request!
+### 2️⃣ Entrar na pasta do projeto
 
-For detailed information, check our [CONTRIBUTING.md](CONTRIBUTING.md).
+```bash
+cd ai-sentiment-analyzer
+```
+
+### 3️⃣ Instalar as dependências
+
+```bash
+pip install flask scikit-learn
+```
+
+### 4️⃣ Executar o servidor
+
+```bash
+python app.py
+```
+
+### 5️⃣ Abrir no navegador
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 📊 Como a IA Funciona (Explicação Técnica)
+
+1. O usuário digita uma frase
+2. O texto é transformado em vetores numéricos (NLP)
+3. O modelo de Machine Learning analisa o padrão
+4. A IA classifica como Positivo ou Negativo
+5. O sistema calcula a probabilidade (confiança)
+6. O resultado é exibido na interface + salvo no histórico
+
+---
+
+## 🧪 Exemplo de Uso
+
+Entrada:
+
+```
+"Hoje foi um dia maravilhoso"
+```
+
+Saída:
+
+```
+Sentimento: Positivo
+Confiança da IA: 92%
+```
+
+---
+
+## 📈 Diferenciais do Projeto (Nível Estágio em IA + Dev)
+
+* Integração completa entre IA + Web
+* Arquitetura backend com Flask
+* Aplicação real de Machine Learning
+* Interface profissional e responsiva
+* Gerenciamento de estado (histórico em memória)
+* Experiência de usuário inspirada em aplicações de IA modernas
+
+---
+
+## 🎯 Objetivo do Projeto
+
+Este projeto foi desenvolvido com foco em:
+
+* Aprendizado de Inteligência Artificial aplicada
+* Desenvolvimento Web com Python
+* Portfólio para vagas de Estágio em Desenvolvimento e IA
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por: **Caio Manfio**
+Área: Desenvolvimento de Sistemas (ADS)
+Foco: Inteligência Artificial + Desenvolvimento Web
+
+---
+
+## ⭐ Melhorias Futuras (Roadmap)
+
+* Deploy online (Render ou Vercel)
+* Banco de dados (SQLite/PostgreSQL)
+* Suporte a mais idiomas
+* Modelo de IA mais avançado (Deep Learning)
+* API pública de análise de sentimentos
+* Autenticação de usuários
+
+---
+
+## 📜 Licença
+
+Este projeto é de uso educacional e para portfólio profissional.
