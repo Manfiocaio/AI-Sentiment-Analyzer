@@ -20,7 +20,7 @@ frases_positivas = [  # Lista de exemplos de frases positivas para ensinar a IA
 ]
 
 frases_negativas = [  # Lista de exemplos de frases negativas para ensinar a IA
-    "estou triste", "que dia ruim", "estou cansado", "isso é horrível",
+    "estou triste", "para de ser chato!", "eu não gosto de você", "que dia ruim", "estou cansado", "isso é horrível",
     "estou desanimado", "foi um péssimo dia", "isso é muito ruim",
     "estou frustrado", "que coisa horrível", "isso é horrível", "estou com raiva", "isso é terrível", "estou desapontado", "isso é uma droga", "estou deprimido", "isso é um desastre", "estou preocupado", "isso é um pesadelo", "estou com medo", "isso é assustador", "vai se ferrar", "isso é uma merda", "estou com ódio", "isso é um inferno", "estou com nojo", "isso é nojento", "estou com vergonha", "isso é embaraçoso", "estou com ciúmes", "isso é irritante", "estou com inveja", "isso é uma injustiça", "estou com saudade", "isso é doloroso", "estou com raiva de você", "isso é um absurdo", "estou com raiva de mim mesmo", "isso é um fracasso", "estou com raiva do mundo", "isso é um desastre total", "estou com raiva de tudo", "isso é um caos", "estou com raiva de nada", "isso é um vazio", "estou com raiva de tudo e todos", "isso é um inferno na terra", "estou com raiva de tudo e todos e de mim mesmo", "isso é um pesadelo sem fim", "estou com raiva de tudo e todos e de mim mesmo e do mundo", "isso é um desastre sem fim", "vai tomar no rabo", "I am sad", "what a bad day", "I am tired", "this is horrible",
     "I am discouraged", "it was a terrible day", "this is very bad",
@@ -99,4 +99,6 @@ def limpar_historico():  # Função executada ao acessar essa rota
 
 
 if __name__ == "__main__":  # Verifica se o arquivo está sendo executado diretamente
-    app.run(debug=True)  # Inicia o servidor web em modo de depuração (debug)
+    if __name__ == "__main__":
+        app.run(host="0.0.0.0", port=10000) # Inicia o servidor Flask na porta 10000, acessível por qualquer IP (0.0.0.0)
+  

@@ -1,2 +1,2 @@
-flask
-scikit-learn
+flask==3.0.0
+scikit-learn==1.4.2
