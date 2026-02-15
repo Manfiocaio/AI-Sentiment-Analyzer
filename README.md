@@ -188,4 +188,8 @@ Foco: Inteligência Artificial + Desenvolvimento Web
 
 ## 📜 Licença
 
+<<<<<<< HEAD
 Este projeto é de uso educacional e para portfólio profissional.
+=======
+Este projeto é de uso educacional e para portfólio profissional.
+>>>>>>> 6813419cf5774bb49d04ad3091b8c7db1f05de63
