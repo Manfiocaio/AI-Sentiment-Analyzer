@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sentiment Analyzer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- HISTÓRICO -->
+        <div class="sidebar">
+            <h2>
+                <i data-lucide="history"></i>
+                Histórico
+            </h2>
+
+            <a href="/limpar-historico" style="font-size:12px;color:#38bdf8;text-decoration:none;">
+                Limpar histórico
+            </a>
+
+            <div style="margin-top:15px;">
+                {% if historico %}
+                {% for item in historico %}
+                <div class="history-item">
+                    <div class="history-text">
+                        "{{ item.texto }}"
+                    </div>
+                    <div class="history-result {{ 'pos' if item.resultado == 'Positivo' else 'neg' }}">
+                        {{ item.resultado }} ({{ item.confianca }}%)
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="history-text" style="color:#64748b;">
+                    Nenhuma análise ainda...
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+            <div class="container">
+                <div class="header">
+                    <div class="logo">
+                        <i data-lucide="brain"></i>
+                        <h1>AI Sentiment Analyzer</h1>
+                    </div>
+                    <p class="subtitle">Análise de sentimentos com Inteligência Artificial</p>
+                    <br>
+                </div>
+
+                <form method="POST">
+                    <div class="input-group">
+                        <input type="text" name="texto" placeholder="Digite uma frase..." required>
+                    </div>
+                    <button class="btn" type="submit">Analisar com IA</button>
+                </form>
+
+                <div class="result-card">
+                    <div style="color:#94a3b8;margin-bottom:8px;">
+                        {{ mensagem }}
+                    </div>
+
+                    {% if resultado %}
+                    <div class="resultado {{ cor }}">
+                        {{ resultado }}
+                    </div>
+                    <div style="color:#38bdf8;font-size:14px;margin-top:8px;">
+                        Confiança da IA: {{ confianca }}%
+                    </div>
+                    {% else %}
+                    <div class="resultado neutro">
+                        Teste Agora!
+                    </div>
+                    {% endif %}
+                </div>
+                <p style="opacity: 0.5; text-align: center; margin-top: 40px;" class="subtitle">Desenvolvido por Caio Manfio</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
